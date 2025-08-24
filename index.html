@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="JOROSE TUX.jpg" alt="Profile Picture">
+                </div>
+                <h1>PO, JOROSE T.</h1>
+                <p class="title">Full Stack Developer</p>
+                <p class="tagline">Building digital experiences with code and creativity</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn github">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="#" class="social-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn
+                    </a>
+                    <a href="#" class="social-btn resume">
+                        <i class="fas fa-file-pdf"></i>
+                        Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="1">
+                    <div class="project-preview">
+                        <img src="https://via.placeholder.com/600x400" alt="Project 1">
+                        <div class="project-overlay">
+                            <h3>Project Name 1</h3>
+                            <div class="tech-stack">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                            <button class="view-project">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-project="2">
+                    <div class="project-preview">
+                        <img src="https://picsum.photos/600/400" alt="Project 2">
+                        <div class="project-overlay">
+                            <h3>Project Name 2</h3>
+                            <div class="tech-stack">
+                                <span>Vue.js</span>
+                                <span>Python</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <button class="view-project">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-project="3">
+                    <div class="project-preview">
+                        <img src="https://picsum.photos/600/400?random=3" alt="Project 3">
+                        <div class="project-overlay">
+                            <h3>Project Name 3</h3>
+                            <div class="tech-stack">
+                                <span>Angular</span>
+                                <span>Firebase</span>
+                                <span>TypeScript</span>
+                            </div>
+                            <button class="view-project">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More projects... -->
+            </div>
+
+            <!-- Project Details Modal -->
+            <div class="project-modal" id="projectModal">
+                <div class="modal-content">
+                    <button class="close-modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="project-details">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details Templates (Hidden) -->
+    <template id="project1Details">
+        <div class="project-content">
+            <div class="project-images">
+                <img src="https://via.placeholder.com/1200x600" alt="Project 1">
+                <div class="project-gallery">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1 detail">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1 detail">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1 detail">
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Project Name 1</h3>
+                <p class="project-description">
+                    Detailed description of the project goes here. Explain the problem it solves, technologies used, and your role in development. 
+                    Make it engaging and informative.
+                </p>
+                <div class="tech-stack">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-btn github">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">View Code</span>
+                    </a>
+                    <a href="#" class="project-btn demo">
+                        <i class="fas fa-play"></i>
+                        <span class="tooltip">Live Demo</span>
+                    </a>
+                    <a href="#" class="project-btn docs">
+                        <i class="fas fa-book"></i>
+                        <span class="tooltip">Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="project2Details">
+        <div class="project-content">
+            <div class="project-images">
+                <img src="https://picsum.photos/1200/600" alt="Project 2">
+                <div class="project-gallery">
+                    <img src="https://picsum.photos/300/200?random=1" alt="Project 2 detail">
+                    <img src="https://picsum.photos/300/200?random=2" alt="Project 2 detail">
+                    <img src="https://picsum.photos/300/200?random=3" alt="Project 2 detail">
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Project Name 2</h3>
+                <p class="project-description">
+                    Detailed description of the second project goes here. Explain the problem it solves, technologies used, and your role in development. 
+                    Make it engaging and informative.
+                </p>
+                <div class="tech-stack">
+                    <span>Vue.js</span>
+                    <span>Python</span>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-btn github">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">View Code</span>
+                    </a>
+                    <a href="#" class="project-btn demo">
+                        <i class="fas fa-play"></i>
+                        <span class="tooltip">Live Demo</span>
+                    </a>
+                    <a href="#" class="project-btn docs">
+                        <i class="fas fa-book"></i>
+                        <span class="tooltip">Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="project3Details">
+        <div class="project-content">
+            <div class="project-images">
+                <img src="https://picsum.photos/1200/600?random=3" alt="Project 3">
+                <div class="project-gallery">
+                    <img src="https://picsum.photos/300/200?random=4" alt="Project 3 detail">
+                    <img src="https://picsum.photos/300/200?random=5" alt="Project 3 detail">
+                    <img src="https://picsum.photos/300/200?random=6" alt="Project 3 detail">
+                </div>
+            </div>
+            <div class="project-info">
+                <h3>Project Name 3</h3>
+                <p class="project-description">
+                    Detailed description of the third project goes here. Explain the problem it solves, technologies used, and your role in development. 
+                    Make it engaging and informative.
+                </p>
+                <div class="tech-stack">
+                    <span>Angular</span>
+                    <span>Firebase</span>
+                    <span>TypeScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-btn github">
+                        <i class="fab fa-github"></i>
+                        <span class="tooltip">View Code</span>
+                    </a>
+                    <a href="#" class="project-btn demo">
+                        <i class="fas fa-play"></i>
+                        <span class="tooltip">Live Demo</span>
+                    </a>
+                    <a href="#" class="project-btn docs">
+                        <i class="fas fa-book"></i>
+                        <span class="tooltip">Documentation</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm [Your Name], a passionate Full Stack Developer with a love for creating 
+                        innovative web solutions. I specialize in building responsive, user-friendly 
+                        applications using modern technologies.
+                    </p>
+                    <h3>Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>React.js</li>
+                                <li>Vue.js</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Python</li>
+                                <li>Express</li>
+                                <li>Django</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Database</h4>
+                            <ul>
+                                <li>MongoDB</li>
+                                <li>PostgreSQL</li>
+                                <li>MySQL</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-notification" id="chatNotification">
+            <i class="fas fa-arrow-right"></i>
+            <span>You can message me here!</span>
+        </div>
+        <button class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comments"></i>
+        </button>
+        
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-header">
+                <h3>Send Message</h3>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form action="https://formspree.io/f/xldlqqwk" method="POST" class="chat-form" id="chatForm">
+                <div class="chat-body">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Your Name"
+                            autocomplete="off"
+                            minlength="2"
+                        >
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="your.email@example.com"
+                            autocomplete="off"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        >
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="form-group message-group">
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="message-input" 
+                            required 
+                            placeholder="Type your message here..."
+                            rows="5"
+                            minlength="10"
+                        ></textarea>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle"></i>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <button type="submit" class="send-btn">
+                        <span>Send</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatToggle = document.getElementById('chatToggle');
+            const chatPopup = document.getElementById('chatPopup');
+            const closeChat = document.getElementById('closeChat');
+            const messageInput = document.getElementById('message');
+            const chatForm = document.getElementById('chatForm');
+            const chatNotification = document.getElementById('chatNotification');
+            
+            // Function to show notification with wiggle
+            function showNotificationWithWiggle() {
+                if (!chatPopup.classList.contains('active')) {  // Only show if chat is not open
+                    // Remove any existing animations
+                    chatNotification.classList.remove('show', 'hide');
+                    chatToggle.classList.remove('wiggle');
+                    
+                    // Force a reflow
+                    void chatNotification.offsetWidth;
+                    void chatToggle.offsetWidth;
+                    
+                    // Start animations
+                    chatToggle.classList.add('wiggle');
+                    chatNotification.classList.add('show');
+                    
+                    // Hide notification and remove wiggle after delay
+                    setTimeout(() => {
+                        chatNotification.classList.remove('show');
+                        chatNotification.classList.add('hide');
+                        chatToggle.classList.remove('wiggle');
+                    }, 5000); // Show for 5 seconds
+                }
+            }
+
+            // Start animations every 30 seconds
+            setInterval(showNotificationWithWiggle, 30000);
+            
+            // Trigger first animation after 5 seconds
+            setTimeout(showNotificationWithWiggle, 5000);
+
+            // Clear message input
+            messageInput.value = '';
+
+            // Toggle chat popup
+            chatToggle.addEventListener('click', () => {
+                chatPopup.classList.toggle('active');
+                chatToggle.classList.toggle('active');
+                // Hide notification if it's showing
+                chatNotification.classList.remove('show');
+                chatNotification.classList.add('hide');
+            });
+
+            // Function to clear validation state for a specific field
+            const clearFieldValidation = (element) => {
+                const formGroup = element.parentElement;
+                formGroup.classList.remove('error', 'success');
+                const errorMessage = formGroup.querySelector('.error-message span');
+                if (errorMessage) {
+                    errorMessage.textContent = '';
+                }
+            };
+
+            // Function to check and update validation states
+            const handleChatToggle = () => {
+                formInputs.forEach(input => {
+                    const value = input.value.trim();
+                    if (!value) {
+                        // Clear validation state if field is empty
+                        clearFieldValidation(input);
+                    } else {
+                        // Only validate if field has content
+                        validateInput(input);
+                    }
+                });
+            };
+
+            closeChat.addEventListener('click', () => {
+                chatPopup.classList.remove('active');
+                chatToggle.classList.remove('active');
+            });
+
+            // Handle validation states when chat is opened
+            chatToggle.addEventListener('click', () => {
+                if (!chatPopup.classList.contains('active')) {
+                    handleChatToggle();
+                }
+            });
+
+            // Projects Grid and Modal functionality
+            const projectModal = document.getElementById('projectModal');
+            const modalContent = projectModal.querySelector('.project-details');
+            const closeModal = projectModal.querySelector('.close-modal');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            // Function to open modal with project details
+            const openProjectModal = (projectId) => {
+                const template = document.getElementById(`project${projectId}Details`);
+                if (template) {
+                    modalContent.innerHTML = template.innerHTML;
+                    projectModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    console.error(`Template not found for project ${projectId}`);
+                }
+            };
+
+            // Function to close modal
+            const closeProjectModal = () => {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = '';
+                modalContent.innerHTML = ''; // Clear content when closing
+            };
+
+            // Add click events to project cards and their view buttons
+            projectCards.forEach(card => {
+                const viewButton = card.querySelector('.view-project');
+                const projectId = card.getAttribute('data-project');
+                
+                // Make the whole card clickable
+                card.addEventListener('click', (e) => {
+                    // Prevent double-triggering when clicking the button
+                    if (!e.target.closest('.view-project')) {
+                        openProjectModal(projectId);
+                    }
+                });
+
+                // Also keep the button click handler
+                if (viewButton) {
+                    viewButton.addEventListener('click', (e) => {
+                        e.stopPropagation(); // Prevent double-triggering
+                        openProjectModal(projectId);
+                    });
+                }
+            });
+
+            // Close modal when clicking close button or outside
+            closeModal.addEventListener('click', closeProjectModal);
+            projectModal.addEventListener('click', (e) => {
+                if (e.target === projectModal) {
+                    closeProjectModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+                    closeProjectModal();
+                }
+            });
+
+            // Form validation functions
+            const setError = (element, message) => {
+                const formGroup = element.parentElement;
+                const errorDisplay = formGroup.querySelector('.error-message span');
+                
+                formGroup.classList.remove('success');
+                formGroup.classList.add('error');
+                errorDisplay.textContent = message;
+            };
+
+            const setSuccess = (element) => {
+                const formGroup = element.parentElement;
+                formGroup.classList.remove('error');
+                formGroup.classList.add('success');
+            };
+
+            const validateInput = (element) => {
+                const value = element.value.trim();
+                
+                // If the field is empty, clear validation state and return
+                if (value === '') {
+                    clearFieldValidation(element);
+                    return false;
+                }
+                
+                if (element.id === 'name') {
+                    if (value.length < 2) {
+                        setError(element, 'Name must be at least 2 characters');
+                        return false;
+                    } else {
+                        setSuccess(element);
+                        return true;
+                    }
+                }
+                
+                if (element.id === 'email') {
+                    if (!value.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)) {
+                        setError(element, 'Please enter a valid email');
+                        return false;
+                    } else {
+                        setSuccess(element);
+                        return true;
+                    }
+                }
+                
+                if (element.id === 'message') {
+                    if (value.length < 10) {
+                        setError(element, 'Message must be at least 10 characters');
+                        return false;
+                    } else {
+                        setSuccess(element);
+                        return true;
+                    }
+                }
+            };
+
+            // Get all form inputs and prevent default validation messages
+            const formInputs = chatForm.querySelectorAll('input, textarea');
+            formInputs.forEach(input => {
+                // Prevent browser's default validation popup
+                input.addEventListener('invalid', (e) => {
+                    e.preventDefault();
+                });
+                
+                // Add input event listeners for real-time validation
+                input.addEventListener('input', () => validateInput(input));
+                input.addEventListener('blur', () => validateInput(input));
+            });
+
+            // Handle form submission
+            // Prevent the default validation popup
+            const inputs = chatForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('invalid', (e) => {
+                    e.preventDefault();
+                });
+            });
+
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Validate all fields
+                let isValid = true;
+                formInputs.forEach(input => {
+                    if (!validateInput(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    return;
+                }
+                
+                // Get form data
+                const formData = new FormData(chatForm);
+                const submitBtn = chatForm.querySelector('.send-btn');
+                
+                // Define button states
+                const buttonStates = {
+                    initial: `<span>Send</span><i class="fas fa-paper-plane"></i>`,
+                    sending: `<i class="fas fa-spinner fa-spin"></i><span>Sending...</span>`,
+                    success: `<i class="fas fa-check"></i><span>Sent!</span>`,
+                    error: `<i class="fas fa-exclamation-circle"></i><span>Failed!</span>`
+                };
+                
+                try {
+                    // Show sending state
+                    submitBtn.innerHTML = buttonStates.sending;
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('sending');
+                    
+                    // Send form data to Formspree
+                    const response = await fetch(chatForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Show success state
+                        submitBtn.innerHTML = buttonStates.success;
+                        submitBtn.classList.remove('sending');
+                        submitBtn.classList.add('success');
+                        
+                        // Clear form
+                        chatForm.reset();
+                        
+                        // Reset button after delay
+                        setTimeout(() => {
+                            submitBtn.innerHTML = buttonStates.initial;
+                            submitBtn.classList.remove('success');
+                            submitBtn.disabled = false;
+                        }, 2000);
+                    } else {
+                        throw new Error('Failed to send message');
+                    }
+                } catch (error) {
+                    // Show error state
+                    submitBtn.innerHTML = buttonStates.error;
+                    submitBtn.classList.remove('sending');
+                    submitBtn.classList.add('error');
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitBtn.innerHTML = buttonStates.initial;
+                        submitBtn.classList.remove('error');
+                        submitBtn.disabled = false;
+                    }, 2000);
+                }
+            });
+
+
+        });
+    </script>
+</body>
+</html>
